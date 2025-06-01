@@ -1,0 +1,313 @@
+/* ========[0] CSS Reset start======== */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ========[0] CSS Reset end======== */
+
+/* ========[1] 全頁基本設定======== */
+.container{
+  max-width: 636px;  /* 比如 blog 區域預期寬度 */
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-wide {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Noto Sans TC";
+  background-color: #FBFBFB;
+  line-height: 150%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ========= [2] 導覽列 ========= */
+.site-header {
+  background-color:#FBFBFB;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  gap: 40px;
+}
+
+.navbar a {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.navbar a:hover {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
+/* ====== [3] Hero 封面區塊 ====== */
+.hero {
+  background-color: #FBFBFB;
+  margin-bottom: 80px;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* 垂直置中 */
+  margin: 0 auto;
+  border: 1px solid #6C757D;
+  gap: 24px;
+}
+
+/* 左側圖片 */
+.hero-img {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+}
+
+/* 右側內文區 */
+.hero-text {
+  flex: 1;
+}
+
+.date {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.tag-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.blog-tags {
+  color: #0027D5;
+  font-size: 24px;
+  line-height: 150%;
+  margin-bottom: 0.5rem;
+}
+
+.latestArticle-button{
+  background-color: #0027D5;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 40px;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 700;  
+  margin-left: 8px;
+}
+
+.hero-text h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+/* ====== [4] Blog Article Layout ====== */
+
+.blog-article {
+  padding: 80px 0;
+  background-color: #FBFBFB;
+  border-top: 1px solid #6C757D;
+  border-bottom: 1px solid #6C757D;
+}
+
+.blog-article h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0027D5;
+  margin: 24px 0;
+}
+
+.blog-article h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #000000;
+}
+
+.blog-article p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+  color: #000000;
+}
+
+.blog-article ul {
+  margin-bottom: 16px;
+  list-style-type: disc; /* 黑圓點 */
+  padding-left: 1.2rem;
+}
+
+.blog-article ol {
+  margin-bottom: 16px;
+  list-style-type: decimal; /* 數字 1, 2, 3... */
+  padding-left: 1.2rem;
+}
+
+.blog-article li {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.blog-article li a{
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.blog-article img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 24px 0;
+}
+
+.blog-article .special-word {
+  color: #0027D5;
+  padding: 0 4px;
+  font-weight: 500;
+}
+
+.article-note {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: bold;
+  color: #000000;
+  background-color: #EDEDED;
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.article-note p{
+  font-weight: bold;
+}
+
+.contact {
+  color:#0027D5;
+  text-decoration: underline;
+  padding: 0 1px;
+}
+
+.post-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 636px;
+  margin: 40px auto;
+}
+
+.post-nav-btn {
+  padding: 8px 16px;
+  border: 1px solid #000000;
+  border-radius: 40px;
+  background-color: transparent;
+  color: #4B4B4B;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ====== [5] footer區域 ====== */
+
+.site-footer {
+  background-color: #FBFBFB;
+  padding: 40px 0 20px;
+}
+
+.footer-main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 312px;
+}
+
+.footer-email{
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.social-platform a img {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  padding: 24px;
+  background-color: #fff;
+}
+.copyright p{
+  font-size: 16px;
+}
+
+/* ====== [6] RWD ====== */
+
+
+ 
+
+
