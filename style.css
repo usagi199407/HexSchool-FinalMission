@@ -363,12 +363,12 @@ a {
   /* 讓 blog-article 的 bottom line 直接貼齊 copyright */
   .blog-article {
     border-bottom: 1px solid #6C757D; /* 保持底線 */
-    margin-bottom: 0; /* 移除底部外邊距 */
+    margin-bottom: 0; 
   }
   
   /* Footer 整體移除上邊距 */
   .site-footer {
-    padding-top: 0; /* 移除原本的40px上邊距 */
+    padding-top: 0; 
   }
   
   /* Copyright 區域調整 */
