@@ -59,6 +59,7 @@ table {
 .container-wide {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 body {
@@ -99,29 +100,43 @@ a {
 
 /* ====== [3] Hero 封面區塊 ====== */
 .hero {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
   background-color: #FBFBFB;
-  margin-bottom: 80px;
+  border-top: 1px solid #6C757D;
+  border-bottom: 1px solid #6C757D;
 }
 
 .hero-content {
   display: flex;
-  flex-wrap: wrap;
   align-items: center; /* 垂直置中 */
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  border: 1px solid #6C757D;
   gap: 24px;
 }
 
+.hero-img,.hero-text {
+  flex: 0 0 50%;    /* 不放大、不縮小，基底寬度 50% */
+  max-width: 50%;
+}
 /* 左側圖片 */
 .hero-img {
-  flex: 1;
-  max-width: 50%;
+  display: block;
+  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 /* 右側內文區 */
 .hero-text {
-  flex: 1;
+  flex: 0 0 50%; 
+  max-width: 50%;
+  padding-left: 24px;
+  box-sizing: border-box;
 }
 
 .date {
@@ -167,7 +182,6 @@ a {
 .blog-article {
   padding: 80px 0;
   background-color: #FBFBFB;
-  border-top: 1px solid #6C757D;
   border-bottom: 1px solid #6C757D;
 }
 
@@ -306,7 +320,62 @@ a {
 }
 
 /* ====== [6] RWD ====== */
-
+@media (max-width: 768px) {
+  /* 全域縮放：80px → 64px = 0.8倍，24px → 12px = 0.5倍 */
+  :root {
+    --scale-padding: 0.8; /* 上下padding縮放比例 */
+    --scale-margin: 0.5;  /* 左右padding縮放比例 */
+  }
+  
+  /* 容器左右間距縮放 */
+  .container,
+  .container-wide {
+    padding-left: calc(24px * var(--scale-margin));
+    padding-right: calc(24px * var(--scale-margin));
+  }
+  
+  /* Blog 文章區域上下間距縮放 */
+  .blog-article {
+    padding-top: calc(80px * var(--scale-padding));
+    padding-bottom: calc(80px * var(--scale-padding));
+  }
+  
+  /* Hero 區塊改為垂直堆疊 */
+  .hero {
+    flex-direction: column;
+  }
+  
+  .hero-img,
+  .hero-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .hero-text {
+    padding: 24px calc(24px * var(--scale-margin));
+  }
+  
+  /* 隱藏整個 footer-main */
+  .footer-main {
+    display: none;
+  }
+  
+  /* 讓 blog-article 的 bottom line 直接貼齊 copyright */
+  .blog-article {
+    border-bottom: 1px solid #6C757D; /* 保持底線 */
+    margin-bottom: 0; /* 移除底部外邊距 */
+  }
+  
+  /* Footer 整體移除上邊距 */
+  .site-footer {
+    padding-top: 0; /* 移除原本的40px上邊距 */
+  }
+  
+  /* Copyright 區域調整 */
+  .copyright {
+    padding: calc(24px * var(--scale-margin));
+  }
+}
 
  
 
